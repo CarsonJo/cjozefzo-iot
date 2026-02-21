@@ -16,7 +16,7 @@ spec:
         app: will-app
     spec:
       containers:
-        - name: will-app
+      - name: will-app
         image: wil42/playground:v2
         ports:
         - containerPort: 8888
