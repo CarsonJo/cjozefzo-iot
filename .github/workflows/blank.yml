@@ -32,5 +32,6 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: yaml parse
         run: |
-          kubectl apply --dry-run=client --validate=false -f deployment.yaml
-          kubectl apply --dry-run=client --validate=false -f service.yaml
+          curl -sL https://github.com/yannh/kubeconform/releases/latest/download/kubeconform-linux-amd64.tar.gz | tar xz
+          ./kubeconform -strict deployment.yaml
+          ./kubeconform -strict service.yaml
